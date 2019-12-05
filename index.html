@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{
+        font-family:Verdana;
+      }
+      div{
+        margin:auto;
+        width:50%;
+      }
+      h1{
+        font-size:15px;
+        margin: 5pc 0px;
+        display:block;
+      }
+      button{
+        margin:10px auto ;
+        display:block;
+        padding:20px;
+        font-size:20px;
+        border:none;
+        outline:none;
+        cursor:pointer;
+        position: absolute;
+        top: 30%;
+        left: 45%;
+      }
+      button:hover{
+        background:grey;
+        color:white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="pregunta"></h1>
+      <button type="button" id="otra-pregunta">+</button>
+    </div>
+    <script type="text/javascript">
+      var obj = {
+        1:"1) En que parte de la pirámide jurídica se encuentran ubicados los contratos informáticos",
+        2:"2) Cual es el principio general respecto al tiempo sobre los contratos de trabajo y cuales las excepciones",
+        3:"3)	Para que se perfeccione el contrato laboral es necesaria la inscripción en la afip o simplemente basta con el mero consentimiento de las partes y prestación de servicios",
+        4:"4)	Cuales son las partes en un contrato informático? Y que clausulas cree usted que debe existir en todo acuerdo informático",
+        5:"5)	Cuando un contrato informático es de adhesión y cuando de a medida?",
+        6:"6)	Que tipo de contratos informáticos conocen?Enumere 3 de ellos y expliquen",
+        7:"7)	Las compraventa en informática puede ser tanto de hardware como del software?",
+        8:"8)	Como se clasifican los contratos sobre el software. Porque cree usted que se clasifican de esa manera",
+        9:"9)	Que es un contrato de leasing informático. Puede hacerse tanto de hardware como de software?",
+        10:"10)	Con que fin se pacta un contrato de mantenimiento informático?",
+        11:"11)	Que es la auditoria informática. Que tipos de auditorias puede haber?",
+        12:"12)	Que es necesario para que la formación de datos personales sea licita?",
+        13:"13)	Cual es la diferencia entre datos personales y datos sensibles?",
+        14:"14)	Que clases de propiedad existen y que busca proteger la normativa referente a la propiedad intelectual",
+        15:"15)	EL autor y titular de un programa de computacion tiene los derechos de comercializacion sobre dicho programa para toda la vida? En caso de fallecimiento con que plazo de tiempo conservan los derechos sus herederos?"
+      }
+      var pregunta = document.getElementById("pregunta");
+      var otra = document.getElementById("otra-pregunta");
+
+      function generarPregunta(){
+        numero_random = Math.floor((Math.random() * 15) +  1);
+        pregunta.innerText = obj[numero_random];
+      }
+
+      otra.addEventListener("click",generarPregunta);
+
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDDe03zVu1wg4juT4frLowJ7Hgt97mqC80",
+    authDomain: "derecho-d8be0.firebaseapp.com",
+    databaseURL: "https://derecho-d8be0.firebaseio.com",
+    projectId: "derecho-d8be0",
+    storageBucket: "derecho-d8be0.appspot.com",
+    messagingSenderId: "4110392917",
+    appId: "1:4110392917:web:bcf365029eef1f99ee7edc"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+  </body>
+</html>
